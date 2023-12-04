@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Name - Resume</title>
+    <title>Naomi de Leng - Resume</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -9,121 +9,99 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
             background: #50b3a2;
+            padding: 10px;
+        }
+        .header img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .navigation a {
             color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
-        }
-        header a {
-            color: #ffffff;
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+            padding: 5px;
         }
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            overflow: hidden;
+        .section {
+            width: 80%;
+            margin: 20px 0;
         }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
+        .section h2 {
+            color: #333;
         }
-        header #branding {
-            float: left;
+        .bullet-point {
+            cursor: pointer;
         }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
+        .detail {
+            display: none;
+            padding-left: 20px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Your Name</span> Resume</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="header">
+        <img src="path_to_your_image.jpg" alt="Naomi de Leng">
+        <div class="navigation">
+            <a href="#about">About me</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </div>
-    </header>
+    </div>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                Brief introduction about yourself. This could include your professional summary, objectives, or personal interests.
-            </p>
-        </div>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p> Hi there! My name is Naomi de Leng, 23 years old. ETC. </p>
     </section>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <p>
-                Details about your work experience. List your roles, responsibilities, achievements, and the companies you've worked with.
-            </p>
-        </div>
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="bullet-point" onclick="toggleDetail('exp1')">Research Assistant Cuddle & Care </div>
+        <div id="exp1" class="detail">TEST TEST TEST </div>
+         <div id="exp2" class="detail">TEST TEST TEST </div>
     </section>
 
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <p>
-                Information about your educational background. Mention your degrees, institutions, and any notable achievements.
-            </p>
-        </div>
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="bullet-point" onclick="toggleDetail('edu1')">Bachelor of Science in Psychology at Tilburg University</div>
+        <div id="edu1" class="detail">More detailed information about this education...</div>
+        <!-- Repeat for other education entries -->
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <p>
-                List of your professional skills. This could include programming languages, software proficiency, and other relevant skills.
-            </p>
-        </div>
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <p>List of your skills...</p>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>
-                Provide your contact information like email address, phone number, or links to your LinkedIn profile or personal website.
-            </p>
-        </div>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Your contact information...</p>
     </section>
 
-    <footer>
-        <p>Your Name, ©2023</p>
-    </footer>
+    <script>
+        function toggleDetail(id) {
+            var detail = document.getElementById(id);
+            if (detail.style.display === 'none') {
+                detail.style.display = 'block';
+            } else {
+                detail.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
